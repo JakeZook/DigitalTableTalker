@@ -1,0 +1,81 @@
+.breathing-bg {
+	background:
+		radial-gradient(circle at 20% 20%, #6af1fe 0%, transparent 35%),
+		radial-gradient(circle at 80% 70%, #ea11ff 0%, transparent 40%),
+		radial-gradient(circle at 40% 80%, #926cff 0%, transparent 45%),
+		linear-gradient(135deg, #14188b, #926cff);
+
+	background-size: 300% 300%;
+	animation: flow 20s linear infinite alternate;
+}
+
+@keyframes flow {
+	0% {
+		background-position: 0% 0%;
+	}
+
+	25% {
+		background-position: 50% 25%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	75% {
+		background-position: 50% 75%;
+	}
+
+	100% {
+		background-position: 0% 100%;
+	}
+}
+
+.qr-shine {
+	position: relative;
+	overflow: hidden;
+}
+
+.qr-shine::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		120deg,
+		transparent 30%,
+		rgba(255, 255, 255, 0.25) 50%,
+		transparent 70%
+	);
+	transform: translateX(-100%) skewX(-25deg);
+	animation: shine 4s infinite;
+	pointer-events: none;
+}
+
+@keyframes shine {
+	0% {
+		transform: translateX(-100%) skewX(-25deg);
+	}
+
+	50%,
+	100% {
+		transform: translateX(100%) skewX(-25deg);
+	}
+}
+
+.name-card {
+	animation: fadeUp 0.5s ease-out;
+}
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
