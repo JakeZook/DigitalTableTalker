@@ -1,4 +1,8 @@
 .breathing-bg {
+	width: 800px;
+	height: 480px;
+	overflow: hidden;
+
 	background:
 		radial-gradient(circle at 20% 20%, #6af1fe 0%, transparent 35%),
 		radial-gradient(circle at 80% 70%, #ea11ff 0%, transparent 40%),
@@ -9,26 +13,9 @@
 	animation: flow 20s linear infinite alternate;
 }
 
-@keyframes flow {
-	0% {
-		background-position: 0% 0%;
-	}
-
-	25% {
-		background-position: 50% 25%;
-	}
-
-	50% {
-		background-position: 100% 50%;
-	}
-
-	75% {
-		background-position: 50% 75%;
-	}
-
-	100% {
-		background-position: 0% 100%;
-	}
+.name-card {
+	animation: fadeUp 0.4s ease-out;
+	min-height: 60px;
 }
 
 .qr-shine {
@@ -39,28 +26,30 @@
 .qr-shine::after {
 	content: "";
 	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
+	inset: -30%;
+
+	width: 40%;
+	height: 160%;
+
 	background: linear-gradient(
-		120deg,
-		transparent 30%,
-		rgba(255, 255, 255, 0.25) 50%,
-		transparent 70%
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
 	);
-	transform: translateX(-100%) skewX(-25deg);
-	animation: shine 4s infinite;
+
+	transform: translateX(-250%) skewX(-25deg);
+	animation: shine 3.5s linear infinite;
+
 	pointer-events: none;
 }
 
 @keyframes shine {
-	0% {
-		transform: translateX(-100%) skewX(-25deg);
+	from {
+		transform: translateX(-250%) skewX(-25deg);
 	}
-
-	50%,
-	100% {
-		transform: translateX(100%) skewX(-25deg);
+	to {
+		transform: translateX(450%) skewX(-25deg);
 	}
 }
 

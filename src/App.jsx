@@ -43,29 +43,28 @@ function App() {
 	}, []);
 
 	return (
-		<div className="min-h-screen text-white flex flex-col items-center justify-center p-8 gap-8 breathing-bg">
-			<div className="flex items-center gap-8">
-				<div className="w-full max-w-4xl bg-black/30 rounded-3xl p-8 backdrop-blur-sm">
-					<h2 className="text-5xl font-bold text-center mb-8">
+		<div className="w-[800px] h-[480px] overflow-hidden text-white flex flex-col items-center justify-between p-4 gap-3 breathing-bg">
+			<div className="flex items-start gap-4 w-full">
+				{/* Facilitators */}
+				<div className="flex-1 bg-black/30 rounded-2xl p-4 backdrop-blur-sm">
+					<h2 className="text-3xl font-bold text-center mb-4">
 						Today's Facilitators
 					</h2>
 
-					<div className="space-y-8">
+					<div className="space-y-3">
 						{!loaded ? (
-							<div className="text-4xl text-center py-12">
+							<div className="text-2xl text-center py-8">
 								Loading facilitators...
 							</div>
 						) : (
 							names.map((item) => (
 								<div
 									key={item.name}
-									className="flex items-center justify-between rounded-2xl bg-zinc-900/80 px-8 py-6 shadow-lg name-card"
+									className="flex items-center justify-between rounded-xl bg-zinc-900/80 px-4 py-3 shadow-lg name-card"
 								>
-									<h1 className="text-5xl font-bold tracking-wide">
-										{item.name}
-									</h1>
+									<h1 className="text-3xl font-bold truncate">{item.name}</h1>
 
-									<p className="text-3xl text-cyan-400 font-medium">
+									<p className="text-xl text-cyan-400 ml-4">
 										{item.playerName}
 									</p>
 								</div>
@@ -74,29 +73,37 @@ function App() {
 					</div>
 				</div>
 
-				<div className="qr-shine w-[500px] bg-black/30 rounded-3xl p-8 backdrop-blur-sm flex flex-col items-center">
-					<h2 className="text-5xl font-bold mb-6">Had fun?</h2>
+				{/* QR */}
+				<div className="qr-shine w-52 bg-black/30 rounded-2xl p-4 backdrop-blur-sm flex flex-col items-center shrink-0">
+					<h2 className="text-3xl font-bold mb-3">Had fun?</h2>
+
 					<img
 						src={qrCode}
 						alt="Google Review QR Code"
-						className="w-64 h-64 rounded-xl bg-white p-4"
+						className="w-36 h-36 rounded-lg bg-white p-2"
 					/>
-					<p className="text-xl mt-6">Please leave us a review!</p>
+
+					<p className="text-base mt-3 text-center">
+						Please leave us a review!
+					</p>
 				</div>
 			</div>
 
-			<div className="w-full max-w-5xl bg-black/30 rounded-3xl p-6 backdrop-blur-sm text-center">
-				<h2 className="text-3xl font-bold">Wi-Fi</h2>
+			{/* WiFi */}
+			<div className="w-full bg-black/30 rounded-2xl p-3 backdrop-blur-sm text-center">
+				<h2 className="text-2xl font-bold">Wi-Fi</h2>
 
-				<p className="text-2xl mt-3">
-					Network:{" "}
+				<p className="text-lg mt-2">
+					Network:
 					<span className="text-cyan-400 font-bold">
+						{" "}
 						Activate - Westminster Guest
 					</span>
 				</p>
 
-				<p className="text-2xl">
-					Password: <span className="text-cyan-400 font-bold">Activate</span>
+				<p className="text-lg">
+					Password:
+					<span className="text-cyan-400 font-bold"> Activate</span>
 				</p>
 			</div>
 		</div>
