@@ -64,7 +64,7 @@ function App() {
 								>
 									<h1 className="text-3xl font-bold truncate">{item.name}</h1>
 
-									<p className="text-xl text-cyan-400 ml-4">
+									<p className="text-2xl text-cyan-400 ml-4">
 										{item.playerName}
 									</p>
 								</div>
@@ -83,15 +83,13 @@ function App() {
 						className="w-36 h-36 rounded-lg bg-white p-2"
 					/>
 
-					<p className="text-base mt-3 text-center">
-						Please leave us a review!
-					</p>
+					<p className="text-xl mt-3 text-center">Please leave us a review!</p>
 				</div>
 			</div>
 
 			{/* WiFi */}
 			<div className="w-full bg-black/30 rounded-2xl p-3 backdrop-blur-sm text-center">
-				<h2 className="text-2xl font-bold">Wi-Fi</h2>
+				<h2 className="text-[40px] font-bold">Wi-Fi</h2>
 
 				<p className="text-lg mt-2">
 					Network:
