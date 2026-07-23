@@ -74,7 +74,7 @@ function App() {
 				</div>
 
 				{/* QR */}
-				<div className="qr-shine w-52 bg-black/30 rounded-2xl p-4 backdrop-blur-sm flex flex-col items-center shrink-0">
+				<div className="qr-shine qr-bounce w-52 bg-black/30 rounded-2xl p-4 backdrop-blur-sm flex flex-col items-center shrink-0">
 					<h2 className="text-3xl font-bold mb-3">Had fun?</h2>
 
 					<img

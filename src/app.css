@@ -86,3 +86,19 @@
 		background-position: 0% 50%;
 	}
 }
+
+@keyframes breathe {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.04);
+	}
+}
+
+.qr-bounce {
+	animation: breathe 2.8s ease-in-out infinite;
+	transform-origin: center;
+	will-change: transform;
+}
