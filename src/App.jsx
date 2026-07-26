@@ -42,67 +42,77 @@ function App() {
 		return () => clearInterval(interval);
 	}, []);
 
+	const compactMode = names.length > 3;
+
 	return (
 		<div className="w-[800px] h-[480px] overflow-hidden text-white flex flex-col items-center justify-between p-4 gap-3 breathing-bg">
-			<div className="flex items-start gap-4 w-full">
+			<div className="flex items-start gap-3 w-full">
 				{/* Facilitators */}
-				<div className="flex-1 bg-black/30 rounded-2xl p-4 backdrop-blur-sm">
-					<h2 className="text-3xl font-bold text-center mb-4">
-						Today's Facilitators
-					</h2>
+				<div className="panel flex-1">
+					<div className="panel-content rounded-2xl p-4">
+						<h2 className="text-scanner font-bold text-4xl text-center mb-3">
+							Meet the team
+						</h2>
 
-					<div className="space-y-3">
-						{!loaded ? (
-							<div className="text-2xl text-center py-8">
-								Loading facilitators...
-							</div>
-						) : (
-							names.map((item) => (
-								<div
-									key={item.name}
-									className="flex items-center justify-between rounded-xl bg-zinc-900/80 px-4 py-3 shadow-lg name-card"
-								>
-									<h1 className="text-3xl font-bold truncate">{item.name}</h1>
-
-									<p className="text-2xl text-cyan-400 ml-4">
-										{item.playerName}
-									</p>
+						<div className="space-y-3">
+							{!loaded ? (
+								<div className="text-2xl text-center py-8">
+									Loading facilitators...
 								</div>
-							))
-						)}
+							) : (
+								names.map((item) => (
+									<div
+										key={item.name}
+										className="flex items-center justify-between rounded-xl bg-zinc-900/80 px-4 py-3 shadow-lg name-card"
+									>
+										<h1 className="text-3xl font-bold truncate">{item.name}</h1>
+
+										<p className="text-2xl text-scanner font-bold ml-4">
+											{item.playerName}
+										</p>
+									</div>
+								))
+							)}
+						</div>
 					</div>
 				</div>
 
 				{/* QR */}
-				<div className="qr-shine qr-bounce w-52 bg-black/30 rounded-2xl p-4 backdrop-blur-sm flex flex-col items-center shrink-0">
-					<h2 className="text-3xl font-bold mb-3">Had fun?</h2>
+				<div className="panel qr-shine qr-bounce w-52 shrink-0">
+					<div className="panel-content rounded-2xl p-4 flex flex-col items-center">
+						<h2 className="text-3xl font-bold mb-2 text-scanner">Had fun?</h2>
 
-					<img
-						src={qrCode}
-						alt="Google Review QR Code"
-						className="w-36 h-36 rounded-lg bg-white p-2"
-					/>
+						<img
+							src={qrCode}
+							alt="Google Review QR Code"
+							className="w-36 h-36 rounded-lg bg-white p-2"
+						/>
 
-					<p className="text-xl mt-3 text-center">Please leave us a review!</p>
+						<p className="text-xl mt-3 text-center">
+							Please leave us a review!
+						</p>
+					</div>
 				</div>
 			</div>
 
 			{/* WiFi */}
-			<div className="w-full bg-black/30 rounded-2xl p-3 backdrop-blur-sm text-center">
-				<h2 className="text-[40px] font-bold">Wi-Fi</h2>
+			<div className="panel w-full">
+				<div className="panel-content rounded-2xl p-3 text-center">
+					<h2 className="text-[40px] font-bold text-scanner">Wi-Fi</h2>
 
-				<p className="text-lg mt-2">
-					Network:
-					<span className="text-cyan-400 font-bold">
-						{" "}
-						Activate - Westminster Guest
-					</span>
-				</p>
+					<p className="text-lg mt-2">
+						Network:
+						<span className="text-cyan-400 font-bold">
+							{" "}
+							Activate - Westminster Guest
+						</span>
+					</p>
 
-				<p className="text-lg">
-					Password:
-					<span className="text-cyan-400 font-bold"> Activate</span>
-				</p>
+					<p className="text-lg">
+						Password:
+						<span className="text-cyan-400 font-bold"> Activate</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	);

@@ -102,3 +102,61 @@
 	transform-origin: center;
 	will-change: transform;
 }
+
+.text-scanner {
+	background: linear-gradient(90deg, #6af1fe, #ea11ff, #926cff, #6af1fe);
+
+	background-size: 300% 100%;
+	background-position: 300% 50%;
+
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+
+	animation: gradientScan 6s linear infinite;
+
+	filter: drop-shadow(0 0 6px rgba(106, 241, 254, 0.35))
+		drop-shadow(0 0 14px rgba(146, 108, 255, 0.25));
+}
+
+@keyframes gradientScan {
+	from {
+		background-position: 300% 50%;
+	}
+	to {
+		background-position: 0% 50%;
+	}
+}
+
+.panel {
+	border: 2px solid transparent;
+	border-radius: 1rem;
+
+	background:
+		linear-gradient(rgba(24, 24, 27, 0.85), rgba(24, 24, 27, 0.85)) padding-box,
+		linear-gradient(90deg, #6af1fe, #ea11ff, #926cff, #6af1fe) border-box;
+
+	background-size:
+		100% 100%,
+		300% 100%;
+	animation: borderFlow 6s linear infinite;
+
+	box-shadow:
+		0 0 10px rgba(106, 241, 254, 0.25),
+		0 0 25px rgba(234, 17, 255, 0.2);
+}
+
+@keyframes borderFlow {
+	from {
+		background-position:
+			0 0,
+			0% 50%;
+	}
+
+	to {
+		background-position:
+			0 0,
+			300% 50%;
+	}
+}
