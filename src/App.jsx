@@ -54,7 +54,9 @@ function App() {
 							Meet the team
 						</h2>
 
-						<div className="space-y-3">
+						<div
+							className={compactMode ? "grid grid-cols-2 gap-3" : "space-y-3"}
+						>
 							{!loaded ? (
 								<div className="text-2xl text-center py-8">
 									Loading facilitators...
@@ -63,13 +65,25 @@ function App() {
 								names.map((item) => (
 									<div
 										key={item.name}
-										className="flex items-center justify-between rounded-xl bg-zinc-900/80 px-4 py-3 shadow-lg name-card"
+										className={`flex items-center rounded-xl bg-zinc-900/80 px-4 py-3 shadow-lg name-card ${
+											compactMode ? "justify-center flex" : "justify-between"
+										}`}
 									>
-										<h1 className="text-3xl font-bold truncate">{item.name}</h1>
+										{compactMode ? (
+											<h1 className="text-scanner text-2xl font-bold truncate text-center w-full">
+												{item.name}
+											</h1>
+										) : (
+											<>
+												<h1 className="text-3xl font-bold truncate">
+													{item.name}
+												</h1>
 
-										<p className="text-2xl text-scanner font-bold ml-4">
-											{item.playerName}
-										</p>
+												<p className="text-2xl text-scanner font-bold ml-4">
+													{item.playerName}
+												</p>
+											</>
+										)}
 									</div>
 								))
 							)}
@@ -78,7 +92,7 @@ function App() {
 				</div>
 
 				{/* QR */}
-				<div className="panel qr-shine qr-bounce w-52 shrink-0">
+				<div className="qr-shine qr-bounce w-52 shrink-0">
 					<div className="panel-content rounded-2xl p-4 flex flex-col items-center">
 						<h2 className="text-3xl font-bold mb-2 text-scanner">Had fun?</h2>
 

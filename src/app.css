@@ -101,6 +101,21 @@
 	animation: breathe 2.8s ease-in-out infinite;
 	transform-origin: center;
 	will-change: transform;
+
+	border: 2px solid transparent;
+	border-radius: 1rem;
+
+	background:
+		linear-gradient(rgba(24, 24, 27, 0.85), rgba(24, 24, 27, 0.85)) padding-box,
+		linear-gradient(90deg, #6af1fe, #ea11ff, #926cff, #6af1fe) border-box;
+
+	background-size:
+		100% 100%,
+		300% 100%;
+
+	box-shadow:
+		0 0 10px rgba(106, 241, 254, 0.25),
+		0 0 25px rgba(234, 17, 255, 0.2);
 }
 
 .text-scanner {
@@ -115,9 +130,6 @@
 	color: transparent;
 
 	animation: gradientScan 6s linear infinite;
-
-	filter: drop-shadow(0 0 6px rgba(106, 241, 254, 0.35))
-		drop-shadow(0 0 14px rgba(146, 108, 255, 0.25));
 }
 
 @keyframes gradientScan {
