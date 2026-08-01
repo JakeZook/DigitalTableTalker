@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import "./app.css";
-import qrCode from "./assets/QR.jpg";
+import qrCode from "./assets/QRNew.jpg";
 
 function App() {
 	const [names, setNames] = useState([]);
