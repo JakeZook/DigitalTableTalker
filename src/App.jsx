@@ -45,7 +45,7 @@ function App() {
 	const compactMode = names.length > 3;
 
 	return (
-		<div className="w-[800px] h-[480px] overflow-hidden text-white flex flex-col items-center justify-between p-4 gap-3 breathing-bg">
+		<div className="w-[800px] h-[480px] overflow-hidden text-white flex flex-col items-center justify-between p-4 gap-3 breathing-bg new-font">
 			<div className="flex items-start gap-3 w-full">
 				{/* Facilitators */}
 				<div className="panel flex-1">

@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+.new-font {
+	font-family: "Zen Dots", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
